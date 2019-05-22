@@ -1,24 +1,36 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ApolloClient from 'apollo-boost';
+import {ApolloProvider} from 'react-apollo';
+import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
+
 import './App.css';
+
 import MainLanding from './components/landing/MainLanding';
-import Navigation from './components/nav/Navigation';
 import SignUp from './components/auth/SignUp';
 import ProfileView from './components/profile/ProfileView';
+import ProfileEdit from './components/profile/ProfileEdit';
+import Footer from './components/Footer';
+
+
+const client = new ApolloClient({
+  uri: '/api/graphql/'
+})
 
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
-      <Router>
-        <Switch>
-          <Route exact path="/" component={MainLanding}/>
-          <Route path="/registration" component={SignUp} /> 
-          <Route path="/profile-view" component={ProfileView} />
-        </Switch>
-      </Router>
-    </div>
+    <ApolloHooksProvider client={client}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={MainLanding}/>
+            <Route path="/registration" component={SignUp} /> 
+            <Route path="/profile-view" component={ProfileView} />
+            <Route path="/profile-edit" component={ProfileEdit} />
+          </Switch>
+        </Router>
+        <Footer />
+    </ApolloHooksProvider>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Button, Container, Col, Row} from 'react-bootstrap';
+import {Button, Col, Row} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 import profile from '../../images/profile.jpg';
 
@@ -15,24 +16,26 @@ const cover = {
 }
 
 class ProfileSections extends Component {
-
     render() {
         return (
-                <Container className="p-md-5 p-4">
-                    <Row>
-                        <Col xl={12} className="d-flex align-items-start flex-row w-100 p-5">
-                            <span className="profile-image bg-img-col" style={cover}></span>
-                            <div className="fullname-profile p-3">
-                                <h4>Alex </h4>
-                                <h4>Spielberg</h4>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                            </div>
+                    <Row className="flex-center align-content-between w-100 p-md-5 p-sm-2 h-100 bbb">
+                        <Col xl={12} className="flex-center justify-content-between flex-row w-100 p-2"> 
+                                <div className="flex-center">
+                                    <span className="profile-image bg-img-col" style={cover}></span>
+                                </div>       
+                                <div className="fullname-profile p-3 text-right">
+                                    <h4>Alex Spielberg</h4>
+                                    <Link className="butn w-100 text-center" to="/profile-edit">Edit</Link> 
+                                    <div className="p-3">
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                    </div>
+                                </div>
                         </Col>
-                        <Col xl={12} className="d-flex align-items-start flex-column w-100 p-5">
+                        <Col xl={12} className="d-flex align-items-start flex-column w-100 p-2 mt-2">
                             <section style={style} className="flex-md-row">
                                 <h6>birthday:</h6> 
                                 <span className="font-med">16.08.1996</span>
@@ -57,16 +60,13 @@ class ProfileSections extends Component {
                                 <h6>spoken language: </h6> 
                                 <span className="font-med">Polish, English, German</span>
                             </section>
+                            <section style={style} className="flex-md-row">
                             <br />
-                            <section>
                             <br />
-                                <h4>About Mike:</h4>
-                                <span className="font-med"  id="bio">"Communicator. Web guru. Food fan. Hipster-friendly introvert. Tv enthusiast. Gamer. Thinker. Twitter lover <Button variant="" className="p-3 small text-light">read more...</Button>"</span>
+                                <span className="font-sm muted">"Communicator. Web guru. Food fan. Hipster-friendly introvert. Tv enthusiast. Gamer. Thinker. Twitter lover <Button variant="" className="small text-dark">read more...</Button>"</span>
                             </section>
-                      </Col>
-                    </Row>
-                        
-             </Container>
+                      </Col>  
+                    </Row>  
         )
     }
 }

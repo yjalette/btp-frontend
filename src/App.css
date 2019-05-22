@@ -60,10 +60,16 @@ body {
 .navbar {
   
 }
+
+.nav-link {
+  text-align: center;
+}
+
 .section {
   margin: 0;
   padding: 0;
 }
+
 
 /* headers */
 
@@ -75,7 +81,7 @@ h2 {
   background-color: #51930a;
   font-weight: bolder;
   margin: 0;
-  padding: 1.2em;
+  padding: 1em;
   align-self: flex-start;
   opacity: 0.7;
 }
@@ -110,6 +116,23 @@ h4 {
   float: right;
 }
 
+.butn {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #051930;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.butn:hover {
+  background: #51930a;
+  text-decoration: none;
+}
+
 /* effects */
 
 .filter {
@@ -129,7 +152,17 @@ h4 {
 .bg-tag-lines {
   filter: brightness(50%);
 }
+.bb {
+  border-bottom: 2px solid white;
+}
 
+.br {
+  border-right: 2px solid black;
+}
+
+.bbb {
+  border-bottom: 2px solid black;
+}
 /* links  */
 
 .btn-link {
@@ -173,7 +206,7 @@ h4 {
 }
 
 .top-profile {
-  transform: translateY(-10%);
+  transform: translateY(-20%);
 }
 
 /* landing  */
@@ -214,7 +247,7 @@ h4 {
   text-align: center;
 }
 
-.bg-img-col{
+.bg-img-col {
   height: -webkit-fill-available;
   background-size: cover;
   background-repeat: no-repeat;

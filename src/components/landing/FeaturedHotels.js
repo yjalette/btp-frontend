@@ -18,9 +18,8 @@ const IsraelStyle = {
     backgroundImage: `url(${Israel})`
 }
 
-
-const FeaturedHotels = () => (
-    <Container className="section-wrapper" fluid>
+const FeaturedHotels = (props) => (
+    <Container className="section-wrapper .featuredHotels" fluid ref={props.innerRef}>
         <h2 className="">Featured Hotels</h2>
         <Row className="section m-0">
             <Col sm={12} md={4} className="bg-img-col flex-center flex-column height" style={BangkokStyle}>       

@@ -16,7 +16,7 @@ class SignOutLinks extends Component {
                 <Nav.Link href="#pricing">Contacts</Nav.Link>
             </Nav>
             <Nav.Link className=""><ModalLogin /></Nav.Link>
-      </Navbar.Collapse>
+        </Navbar.Collapse>
     )
   }
       

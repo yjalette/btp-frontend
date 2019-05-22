@@ -27,7 +27,7 @@ class ModalLogin extends Component {
     render() {
       return (
         <>
-          <Button variant="" className="text-green font-weight-bolder font-med float-right" onClick={this.handleShow}>Apply Now!</Button>
+          <Button variant="" className="text-green font-weight-bolder font-med" onClick={this.handleShow}>Apply Now!</Button>
   
           <Modal show={this.state.show} onHide={this.handleClose} className="p-5">
             <Modal.Header className="bg-light-green text-green" closeButton>
@@ -35,9 +35,7 @@ class ModalLogin extends Component {
             </Modal.Header>
             <SignIn />
             <Modal.Footer>
-                <Button variant="" componentClass={Link} href="/registration" to="/registration">
-                        <span className="text-green">click here to create an account</span>
-                </Button>
+                <Link className="text-green" to="/registration">click here to create an account</Link>
             </Modal.Footer>
           </Modal>
         </>

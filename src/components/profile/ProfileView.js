@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
-import {Container} from 'react-bootstrap';
 import ProfileSections from './ProfileSections';
-
-import couple from '../../images/couple.jpg';
 import ProfileReview from './ProfileReview';
+import Navigation from '../nav/Navigation';
+
+import {Container, Row, Col} from 'react-bootstrap';
+import couple from '../../images/couple.jpg';
 
 const cover = {
     backgroundImage: `url(${couple})`,
@@ -14,13 +15,16 @@ const cover = {
 class ProfileView extends Component {
     render(){
       return(
-            <Container className="section-wrapper" fluid>
+            <Container className="section-wrapper bg-light-green" fluid>
+                <Navigation />
                 <section className="height-sm bg-img-col" style={cover}></section>
-                <Container className="bg-light-green top-profile p-3">
-                            <ProfileSections />
-                            <ProfileReview />
+                <Container className="p-0">
+                    <Row className="top-profile bg-beige shadow-sm rounded m-auto flex-center p-md-5 p-sm-1">
+                        <Col md={12}><ProfileSections /></Col> 
+                        <Col md={12}><ProfileReview /></Col>    
+                    </Row>
                 </Container>
-          </Container>
+           </Container>
           
             
 

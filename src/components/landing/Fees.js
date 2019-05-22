@@ -1,38 +1,44 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import {Row, Col, Container, Card} from 'react-bootstrap';
 
+const arr = [
+    {
+        icon: 'fa fa-home font-md',
+        text: 'A HAND SELECTED HOSTEL FROM OUR VERIFIED PARTNERS'
+    },
+    {
+        icon: 'fa fa-book',
+        text: 'OUR BACKPACKING 101 E BOOK'
+    },
+    {
+        icon: 'fa fa-phone-square',
+        text: 'A HAND SELECTED HOSTEL FROM OUR VERIFIED PARTNERS'
+    },
+    {
+        icon: 'fa fa-dollar',
+        text: '20% OFF PROMO CODE FOR YOUR NEXT TRIP'
+    }
+]
 
-
-class Fees extends Component {
-    render() {
-        return (
+const Fees = (props) => (
          <Container className="section-wrapper shadow-lg" fluid>
-            <h2 className="non">Our Fees</h2>
+            <h2 className="" ref={props.innerRef}>Our Fees</h2>
             <Row className="section flex-center w-100">
-                <Col sm={12} md={6} className="text-center none"><span className="display-4 rotated">Our Fees Include:</span></Col>
+                <Col sm={12} md={6} className="text-center none">
+                    <span className="display-4 rotated">Our Fees Include:</span>
+                </Col>
                 <Col sm={12} md={6} className="p-0">
-                <Card className="myCard flex-center">
-                    <i className="fa fa-home font-md"></i>
-                    <p className="text-lowercase p-2">A HAND SELECTED HOSTEL FROM OUR VERIFIED PARTNERS</p>
-                </Card>
-                <Card className="myCard flex-center">
-                    <i className="fa fa-book"></i>
-                    <p className="text-lowercase p-2">OUR BACKPACKING 101 E BOOK</p>
-                </Card>
-                <Card className="myCard flex-center">
-                    <i className="fa fa-phone-square"></i>
-                    <p className="text-lowercase p-2">HANDS ON SERVICE BEFORE AND DURING YOUR TRIP</p>
-                </Card>
-                <Card className="myCard flex-center">
-                    <i className="fa fa-dollar"></i>
-                    <p className="text-lowercase p-2">20% OFF PROMO CODE FOR YOUR NEXT TRIP</p>
-                </Card>    
+                    { arr.map( el => (
+                        <Card className="myCard flex-center" key={el.icon}>
+                             <i className={el.icon}></i>
+                             <p className="text-lowercase p-2">{el.text}</p>
+                        </Card> 
+                    ))}   
                 </Col>   
             </Row>
         </Container>
-        )
-    }
-}
+    )
+    
 
 export default Fees;

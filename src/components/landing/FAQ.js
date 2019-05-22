@@ -2,8 +2,8 @@ import React from 'react';
 
 import {Accordion, Card, Button, Container} from 'react-bootstrap';
 
-const FAQ = () => (
-    <Container className="section-wrapper shadow-lg rounded" fluid>
+const FAQ = (props) => (
+    <Container className="section-wrapper shadow-lg rounded" fluid ref={props.innerRef}> 
         <h2 className="align-self-start shadow-sm rounded">FAQ</h2>
         <Accordion defaultActiveKey="" className="shadow-sm rounded section">
             <Card>
