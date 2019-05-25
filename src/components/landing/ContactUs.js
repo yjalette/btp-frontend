@@ -9,7 +9,7 @@ class ContactUs extends Component {
         return (
             <Container className="section-wrapper" fluid>
                 <h2 className="">Still Have a Question? Contact Us!</h2>
-                <Row className="section text-align-right m-0">
+                <Row className="section text-align-right m-0 h-100">
                     <Col md={6} className="p-0">
                         <Image src={laptop} className="w-100"/>
                     </Col>

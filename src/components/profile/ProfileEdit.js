@@ -120,7 +120,7 @@ class ProfileEdit extends Component {
 
                         <Form.Group id="form-about">
                             <Form.Label>about youself: {about}</Form.Label>
-                            <Form.Control as="textarea" rows="3" id="about" onChange={this.handleChange} maxLength="150"/>
+                            <Form.Control as="textarea" rows="3" id="about" onChange={this.handleChange} maxLength="250"/>
                         </Form.Group>
 
                         <Link type="click" className="" to="/profile-view"><i className="fa fa-arrow-left m-1"></i>Back</Link>

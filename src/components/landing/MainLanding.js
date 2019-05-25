@@ -67,11 +67,10 @@ class MainLanding extends Component {
               <Navbar.Brand href="#home" className="w-100 p-2 d-flex justify-content-center bg-light-green m-0">
                 <Image src={logo} alt="logo" className="p1 w-45"/>
               </Navbar.Brand>
-              {/* <span>Connecting travelers with hostels since 2017</span> */}
               <Navbar collapseOnSelect expand="lg" className="navbar">
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav" className="flex-center">
-                  <Nav className="">
+                <Navbar.Collapse id="responsive-navbar-nav" className="">
+                  <Nav className="flex-center">
                       <Nav.Link onClick={this.scrollAbout}>About Us</Nav.Link>
                       <Nav.Link onClick={this.scrollFeaturedHotels}>Featured Hotels</Nav.Link>
                       <Nav.Link onClick={this.scrollFees}>Our Fees</Nav.Link>

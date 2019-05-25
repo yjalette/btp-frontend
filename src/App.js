@@ -1,9 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
-
 import './App.css';
 
 import MainLanding from './components/landing/MainLanding';
@@ -12,11 +11,9 @@ import ProfileView from './components/profile/ProfileView';
 import ProfileEdit from './components/profile/ProfileEdit';
 import Footer from './components/Footer';
 
-
 const client = new ApolloClient({
-  uri: '/api/graphql/'
+  uri: '/graphql/'
 })
-
 
 function App() {
   return (
