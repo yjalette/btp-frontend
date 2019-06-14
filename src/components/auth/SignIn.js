@@ -4,22 +4,15 @@ import { useMutation } from 'react-apollo-hooks';
 import { Form, Button } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
 
-
-
 const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
-        firstname
-        lastname
-        id
-        role
         token
         type
         expire
     }
   }
 `;
-
 
 const SignIn = (props) => {
     console.log(props)
@@ -33,7 +26,6 @@ const SignIn = (props) => {
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
-        console.log(e.target.value);
     }
 
     const handlePasswordChange = (e) => {

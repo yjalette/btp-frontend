@@ -39,7 +39,7 @@ const FeaturedHotels = (props) => (
             <Col sm={12} md={4} className="bg-img-col flex-center flex-column height" style={RotterdamStyle}>    
                 <div className="caption">
                     <h4>Chef It Up In Holland</h4>
-                    <p className="font-sm">A beautiful beachside hostel needs some helping hands!</p> 
+                    <p className="font-sm">A beautiful beachside hostel In Holland needs some helping hands!</p> 
                 </div>  
                 <Button variant="warning" className="w-100 rounded-0">apply now</Button>    
             </Col>

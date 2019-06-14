@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import ProfileSections from './ProfileSections';
 import ProfileReview from './ProfileReview';
@@ -15,24 +15,17 @@ const cover = {
     backgroundPosition: 'center'
 }
 
-class ProfileView extends Component {
-    render(){
-      return(
+const ProfileView = () => (
             <Container className="section-wrapper bg-light-green" fluid>
                 <Navigation />
-                <Container className="reset flex-center flex-column vh-100" fluid>
-                    <Row className="bg-beige shadow-sm rounded m-auto w-75 reset d-flex flex-column-reverse flex-lg-row">
-                        <Col lg={7} md={12} style={cover}><ProfileReview className="text-light" /></Col>
-                        <Col lg={5} md={12} className="p-lg-5 p-md-0"><ProfileSections /></Col> 
+                <h2>My Profile</h2>
+                <Container className="reset flex-center align-items-start bg-light-green my-xl-5 m-0" fluid>
+                    <Row className="bg-beige shadow-sm rounded w-75 reset d-flex flex-column-reverse flex-xl-row">
+                        <Col xl={7} lg={12} style={cover} className="height-sm"><ProfileReview className="text-light" /></Col>
+                        <Col xl={5} lg={12} className="p-5"><ProfileSections /></Col> 
                     </Row>      
                 </Container> 
            </Container>
-          
-            
-
-            )
-        }
-      
-    }
-
+        )
+       
 export default ProfileView;

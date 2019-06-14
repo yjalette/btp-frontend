@@ -25,14 +25,14 @@ const Fees = (props) => (
          <Container className="section-wrapper shadow-lg" fluid>
             <h2 className="" ref={props.innerRef}>Our Fees</h2>
             <Row className="section flex-center w-100">
-                <Col sm={12} md={6} className="text-center none">
+                <Col sm={12} lg={5} className="text-center none ">
                     <span className="display-4 rotated">Our Fees Include:</span>
                 </Col>
-                <Col sm={12} md={6} className="p-0">
+                <Col sm={12} lg={7} className="p-0">
                     { arr.map( el => (
-                        <Card className="myCard flex-center" key={el.icon}>
+                        <Card className="myCard flex-center p-5" key={el.icon}>
                              <i className={el.icon}></i>
-                             <p className="text-lowercase p-2">{el.text}</p>
+                             <p className="text-lowercase p-2 font-sm">{el.text}</p>
                         </Card> 
                     ))}   
                 </Col>   

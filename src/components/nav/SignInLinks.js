@@ -5,13 +5,13 @@ import {Navbar, Nav} from 'react-bootstrap';
 class SignInLinks extends Component {
   render(){
     return(
-          <Navbar.Collapse id="responsive-navbar-nav" className="flex-center">
-            <Nav className="">
-                <Nav.Link href="#deets">My Profile</Nav.Link>
-                <Nav.Link href="#features">Featured Hotels</Nav.Link>
-                <Nav.Link href="#pricing">Messages</Nav.Link>
-                <Nav.Link href="#features">Settings</Nav.Link>
-                <Nav.Link href="#pricing">Help</Nav.Link>
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="rounded">
+                <Nav.Link href="/profile-view" className="b-nav">My Profile</Nav.Link>
+                <Nav.Link href="/profile-view" className="b-nav">Featured Hotels</Nav.Link>
+                <Nav.Link href="#pricing" className="b-nav">Messages</Nav.Link>
+                <Nav.Link href="#features" className="b-nav">Settings</Nav.Link>
+                <Nav.Link href="#pricing" className="b-nav border-0">Help</Nav.Link>
             </Nav>
           </Navbar.Collapse>
     )

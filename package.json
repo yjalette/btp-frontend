@@ -16,6 +16,7 @@
     "react-country-region-selector": "^1.4.3",
     "react-datepicker": "^2.5.0",
     "react-dom": "^16.8.6",
+    "react-image-gallery": "^0.8.17",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "remove-node-modules": "^1.7.4"
