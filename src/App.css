@@ -64,11 +64,12 @@ body {
   padding: 0;
   margin: 0;
   border-radius: 0;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
 }
 
-.flex {
-  flex: 1;
+a {
+  font-size: 1.1em;
 }
 
 /* nav */
@@ -307,6 +308,12 @@ h4 {
 
 /* forms */
 
+select {
+  font-size: 0.8em;
+  border: 1px solid #ced4da;
+  color: gray;
+}
+
 .form-group {
   text-align: left;
 }
@@ -315,6 +322,10 @@ h4 {
   text-align: left;
 }
 
+.has-aux {
+  display: flex;
+  flex-direction: row;
+}
 
 /* profile */
 
@@ -325,9 +336,11 @@ h4 {
 }
 
 .profile-image {
-  object-fit: contain;
-  max-width: 200px;
-  max-height: 200px;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  max-width: 180px;
+  max-height: 180px;
 }
 
 .profile-wrapper {
@@ -377,6 +390,10 @@ h4 {
   }
   .navbar-brand {
     width: auto!important;
+  }
+
+  .height-sm {
+    height: 350px!important;
   }
 
   h2 {

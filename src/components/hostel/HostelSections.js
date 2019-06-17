@@ -13,17 +13,24 @@ import {label} from '../constants/index';
 
 const field = "d-flex align-items-around justify-content-start p-3 font-med text-secondary flex-xl-row flex-column";
 
-const about = "At Poramba Hostel you find a cozy vibe and chilled out atmosphere. If you´re looking for some relaxing time…this is the place.We´re located in a quiet neighbourhood. Only 4 blocks from the bus station so you can just walk to get here. We working on making Poramba an Eco Friendly Hostel, that´s why we use solar heating system to warm water and use recycled material for building furniture and other artefacts. For your accommodation we offer different options: shared rooms (4, 6 and 8 bed dorms) and double, triple and quadruple rooms. All of them and the dorms with private bathroom, 24 hour hot water, air conditioning and bed linen. You can hire towels at reception. For chilling out there is an outside seating area and a swimming pool. Free Wi-Fi access is available in all hostel and left luggage facilities are available too. We include breakfast. For cooking you can use our full equipped kitchen and any time you want you can enjoy our pool table! Lounge area with TV, music and bar. Going downtown is easy from Porambä... it just takes a 10 minutes walk to get the main services: banks, shops, bars and restaurants."
+const about = "At Poramba Hostel you find a cozy vibe and chilled out atmosphere. If you´re looking for some relaxing time - this is the place. We´re located in a quiet neighbourhood. Only 4 blocks from the bus station so you can just walk to get here. We working on making Poramba an Eco Friendly Hostel, that´s why we use solar heating system to warm water and use recycled material for building furniture and other artefacts. For your accommodation we offer different options: shared rooms (4, 6 and 8 bed dorms) and double, triple and quadruple rooms. All of them and the dorms with private bathroom, 24 hour hot water, air conditioning and bed linen. You can hire towels at reception. For chilling out there is an outside seating area and a swimming pool. Free Wi-Fi access is available in all hostel and left luggage facilities are available too. We include breakfast. For cooking you can use our full equipped kitchen and any time you want you can enjoy our pool table! Lounge area with TV, music and bar. Going downtown is easy from Porambä"
 
 class HostelSections extends Component {
 
     state = {
-        showMore: false
+        showMoreDescription: false,
+        showMoreHistory: false
     }
 
-    handleClick = () => {
+    handleHistoryClick = () => {
         this.setState({
-            showMore: true
+            showMoreHistory: true
+        })
+    }
+
+    handleDescriptionClick = () => {
+        this.setState({
+            showMoreDescription: true
         })
     }
 
@@ -59,11 +66,11 @@ class HostelSections extends Component {
                     </section>
                     <section className={field}>
                         <span className={label}>about: </span>
-                        <Descriptions showMore={this.state.showMore} text={about} handleClick={this.handleClick}/>
+                        <Descriptions showMore={this.state.showMoreDescription} text={about} handleClick={this.handleDescriptionClick}/>
                     </section>
                     <section className={field}>
                         <span className={label}>history: </span>
-                        <Descriptions showMore={this.state.showMore} text={about} handleClick={this.handleClick} />
+                        <Descriptions showMore={this.state.showMoreHistory} text={about} handleClick={this.handleHistoryClick} />
                     </section>
                 </section>
                 <section className="d-flex justify-content-around w-100 ">

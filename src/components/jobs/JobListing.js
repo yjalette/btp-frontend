@@ -1,27 +1,25 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-import Navigation from '../nav/Navigation';
-import {Container, Row, Col} from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 import JobSections from './JobSections';
-import HostelSlider from '../hostel/HostelSlider';
+import hostel from '../../images/hostel-people.jpg';
 
-
-class JobListing extends Component {
-    render(){
-      return(
-            <Container className="section-wrapper bg-beige h-100" fluid>
-                <Navigation />
-                <h2 className="text-left">Job Listing <input type="text" placeholder="search..." className="float-right w-25 p-1 bg-light-green rounded" /></h2>
-                <Container className="reset flex-center p-0 h-100" fluid>
-                    <Row className="shadow-sm rounded w-100 h-100 bg-light-green reset flex-center align-items-start flex-column-reverse align-items-between flex-xl-row">
-                        <Col xl={6} lg={12} className="bg-beige p-2 d-flex flex-column justify-content-between align-items-start"><JobSections /></Col>
-                        <Col xl={6} lg={12} className="p-0"><HostelSlider /></Col> 
-                    </Row>      
-                </Container> 
-            </Container> 
-            )
-        }
-      
-    }
+const JobListing = () => (
+    <Card style={{ width: '40rem' }} className="m-3">
+        <Card.Img variant="top" src={hostel} />
+        <Card.Body className="flex-center flex-column font-med align-items-between py-5">
+            <Card.Title className="display-4">Sunny H-Tel</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted small"><span className="fa fa-map-marker text-green mr-1"></span>Barcelona, Spain</Card.Subtitle>
+            <section className="flex-center justify-content-around py-4 w-100">
+                <Card.Text><i className="fa fa-address-book text-green mr-1"></i>bartender</Card.Text>
+                <Card.Text><i className="fa fa-clock-o text-green mr-1"></i>24 hours</Card.Text>
+            </section>
+            <section className="flex-center text-light py-4">
+                <Card.Link to="#" className="butn">Save</Card.Link>
+                <Card.Link to="/job-listing" className="butn">Apply</Card.Link>
+            </section>
+        </Card.Body>
+    </Card>
+)
 
 export default JobListing;

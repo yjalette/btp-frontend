@@ -9,7 +9,7 @@ import {group, label, control} from '../constants/index';
 
 const SIGNUP = gql`
 mutation signUp($username: String!, $email: String!, $password: String!, $firstname: String!, $lastname: String!, $bday: String!, $profilePic: String!, $actualOccupation: String!, $country: String!, $bio: String!) {
-    signUp(username: $username, email: $email, password: $password, firstname: $firstname, lastname: $lastname, bday: $bday, profilePic: $profilePic, actualOccupation: $actualOccupation, country: $country, bio: $bio, ) 
+    signUp(username: $username, email: $email, password: $password, firstname: $firstname, lastname: $lastname, bday: $bday, profilePic: $profilePic, actualOccupation: $actualOccupation, country: $country, bio: $bio) 
   
 }
 `
@@ -36,9 +36,10 @@ const initState = {
     password: '',
     bday: '',
     bio: '',
-    occupation: '',
+    media: '',
+    actualOccupation: '',
     country: '',
-    profilePic: ' ',
+    profilePic: '',
     firstNameError: '',
     lastNameError: '',
     userNameError: '',
@@ -65,12 +66,13 @@ const SignUp = props => {
 
     const [state, dispatch] = useReducer(reducer, initState);
 
-    const {firstName, lastName, userName, email, bday, bio, actualOccupation, country, password, profilePic, media} = state;
+    const {firstName, lastName, userName, email, bday, bio, actualOccupation, country, password, media} = state;
 
     const signUpPost = useMutation(SIGNUP, {
-        variables: { email, password, bday, bio, actualOccupation: actualOccupation, country, username: userName, firstname: firstName, lastname: lastName, profilePic}
+        variables: { email, password, bday: bday && bday.toISOString(), bio, actualOccupation, country, username: userName, firstname: firstName, lastname: lastName, profilePic: "picture"}
     })
 
+    console.log(media);
     const profilePicPost = useMutation(UPLOADFILE, {
         variables: { media }
     })
@@ -88,7 +90,7 @@ const SignUp = props => {
         console.log(e.target.files);
         dispatch ({
             type: 'SET_FORM_FIELD',
-            payload: {name: "media", value: e.target.value[0]}
+            payload: {name: "media", value: e.target.files[0]}
         })
     }
 
@@ -133,10 +135,17 @@ const SignUp = props => {
     }
 
     const selectBirthday = (date) => {
-        this.setState({
-          bday: date
-        });
+        dispatch({ type: 'SET_FORM_FIELD', payload: {name: 'bday', value: date}})
       }
+
+    const handleChangeSelect = e => {
+        dispatch({type: 'SET_FORM_FIELD', payload: {name: 'country', value: e}})
+    }
+    const handleBioChange = e => {
+        console.log(e)
+    }
+
+    console.log(state)
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -184,19 +193,19 @@ const SignUp = props => {
                                 </Form.Group>
                                 <Form.Group id="country-group" className={group}>
                                     <Form.Label className={label}>Country: </Form.Label>
-                                    <CountryDropdown defaultOptionLabel="Ireland" value={state.country} type="text" className={control}  name="country" onChange={handleChange} />
+                                    <CountryDropdown defaultOptionLabel="Ireland" value={state.country} type="text" className="p-2 muted w-100 rounded"  name="country" onChange={handleChangeSelect} />
                                 </Form.Group>
                                 <Form.Group id="occupation-group" className={group}>
                                     <Form.Label className={label}>Occupation: </Form.Label>
-                                    <Form.Control type="text" className={control}  name="occupation" value={state.occupation} onChange={handleChange} />
+                                    <Form.Control type="text" className={control}  name="actualOccupation" value={state.actualOccupation} onChange={handleChange} />
                                 </Form.Group>
                                 <Form.Group id="bday-group" className={group}>
-                                    <Form.Label className={label}>Birthday: </Form.Label> 
-                                    <DatePicker className={control} value={state.bday} selected={state.bday} onChange={selectBirthday} placeholder="07/10/1993" />     
+                                    <Form.Label className={label}>Birthday(dd/mm/year): </Form.Label> 
+                                    <DatePicker dateFormat="dd/MM/yyyy" className={control} value={state.bday} selected={state.bday} onChange={selectBirthday} placeholder="day/month/year" />     
                                 </Form.Group>
                                 <Form.Group id="bio-group" className={group}>
                                     <Form.Label className={label}>About youself: </Form.Label>
-                                    <Form.Control as="textarea" rows="3" onChange={handleChange} maxLength="250" />
+                                    <Form.Control as="textarea" rows="3" name="bio" onChange={handleChange} maxLength="250" />
                                 </Form.Group>
                                 <Form.Group id="password-group" className={group}>
                                     <Form.Label required className={label}>Password: </Form.Label>

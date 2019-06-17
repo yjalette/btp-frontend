@@ -54,10 +54,6 @@ class JobSections extends Component {
                         <span className="handwritting">english, french</span>
                     </section>
                     <section className={field}>
-                        <span className={label}>spoken language: </span>
-                        <span className="handwritting">Spanish, Portuguese, English</span>
-                    </section>
-                    <section className={field}>
                         <span className={label}>BTP offers: </span>
                         <span className="handwritting">maiestatis liberavisse deterruisset</span>
                     </section>
@@ -70,9 +66,11 @@ class JobSections extends Component {
                         <Descriptions showMore={this.state.showMore} text={description} handleClick={this.handleClick}/>
                     </section>
                 </section>
-                <section className="d-flex justify-content-around w-100 ">
-                    <Link className="butn text-center mx-1 flex-fill" to="/hostel-edit">Edit</Link>
-                    <Link className="butn text-center mx-1 flex-fill" to="/profile-edit">Delete</Link>
+                <section className="float-right w-100">
+                    <section>
+                        <Link className="butn text-center mx-1" to="/hostel-edit">Edit</Link>
+                        <Link className="butn text-center mx-1" to="/profile-edit">Delete</Link>
+                    </section>
                 </section>
 
             </>
