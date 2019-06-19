@@ -23,7 +23,7 @@ class JobSections extends Component {
             <>
                 <section className="d-flex justify-content-between w-100">
                     <section className="flex-center flex-column p-2 w-100">
-                        <span><img src={profile} className="hostel-logo img-responsive" alt="logo"/></span>
+                        <span><img src={profile} className="hostel-logo img-responsive rounded-circle" alt="logo"/></span>
                         <span className="display-4 my-1">Sunny H-Tel </span>
                         <span className="font-sm my-1"><span className="fa fa-map-marker text-green font-med px-2"></span>Barcelona, Spain </span>
                     </section>
@@ -66,13 +66,10 @@ class JobSections extends Component {
                         <Descriptions showMore={this.state.showMore} text={description} handleClick={this.handleClick}/>
                     </section>
                 </section>
-                <section className="float-right w-100">
-                    <section>
-                        <Link className="butn text-center mx-1" to="/hostel-edit">Edit</Link>
-                        <Link className="butn text-center mx-1" to="/profile-edit">Delete</Link>
-                    </section>
+                <section className="d-flex justify-content-between w-50">
+                    <Link className="butn text-center mx-1 flex-fill" to="/hostel-edit">Edit</Link>
+                    <Link className="butn text-center mx-1 flex-fill" to="">Delete</Link>
                 </section>
-
             </>
         )
     }

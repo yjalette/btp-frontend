@@ -22,7 +22,7 @@ const arr = [
 ]
 
 const Fees = (props) => (
-         <Container className="section-wrapper shadow-lg" fluid>
+         <Container className="wrapper shadow-lg" fluid>
             <h2 className="" ref={props.innerRef}>Our Fees</h2>
             <Row className="section flex-center w-100">
                 <Col sm={12} lg={5} className="text-center none ">

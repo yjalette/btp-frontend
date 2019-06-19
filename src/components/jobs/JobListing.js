@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Card, Button } from 'react-bootstrap';
-import JobSections from './JobSections';
+import { Card} from 'react-bootstrap';
 import hostel from '../../images/hostel-people.jpg';
 
 const JobListing = () => (

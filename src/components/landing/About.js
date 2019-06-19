@@ -13,7 +13,7 @@ const arr = [
 ]
 
 const About = (props) => (
-                    <Container className="section-wrapper shadow-lg" fluid ref={props.innerRef}>
+                    <Container className="wrapper shadow-lg" fluid ref={props.innerRef}>
                         <h2 className="">About Us</h2>
                         <Row className="section flex-center w-100">
                             <Col sm={12} lg={5} className="text-center none">

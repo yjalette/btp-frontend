@@ -9,7 +9,7 @@ const TagLine = (props) => {
     }             
 
     return (
-        (   <Container className="section-wrapper bg-img-col flex-center height-sm" style={cover} fluid>
+        (   <Container className="wrapper bg-img-col flex-center height-sm" style={cover} fluid>
                                 <span className="text-light text-center display-4">{props.text}</span>
                             </Container>
                         )

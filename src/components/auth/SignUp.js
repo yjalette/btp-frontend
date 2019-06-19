@@ -1,11 +1,13 @@
-import React, {useReducer, useEffect} from 'react';
+import React, { useReducer, useEffect } from 'react';
 import gql from 'graphql-tag';
+import { Link }from 'react-router-dom';
 import { useMutation } from 'react-apollo-hooks';
 import { CountryDropdown } from 'react-country-region-selector';
 import DatePicker from "react-datepicker";
-import {Form, Button, Row, Col, Container} from 'react-bootstrap';
-import adventure from '../../images/adventure.jpg';
-import {group, label, control} from '../constants/index';
+import { Form, Button, Row, Col, Container } from 'react-bootstrap';
+
+import { group, label, control } from '../constants/index';
+import adventure from '../../images/map.jpg';
 
 const SIGNUP = gql`
 mutation signUp($username: String!, $email: String!, $password: String!, $firstname: String!, $lastname: String!, $bday: String!, $profilePic: String!, $actualOccupation: String!, $country: String!, $bio: String!) {
@@ -153,22 +155,22 @@ const SignUp = props => {
         signUpPost().then(({ data }) => {
             console.log(data);
             props.history.push('/profile-view');
-        }) //.catch((data) => setError(data.graphQLErrors[0].validation.email[0]))
-        
+        }) //.catch((data) => setError(data.graphQLErrors[0].validation.email[0]))   
     }
-
       return (
             <Container className="section-wrapper" fluid>
                 <h2>Registration</h2>
-                <Container className="reset flex-center align-items-start bg-beige" fluid>
-                    <Row className="bg-beige shadow-sm rounded w-75 reset d-flex flex-column flex-lg-row my-5 m-0">
+                <Container className="reset flex-center" fluid>
+                    <Row className="bg-beige shadow-sm rounded w-75 reset d-flex flex-column flex-lg-row m-0">
                         <Col xl={6} lg={12} className="height-sm" style={cover}></Col>
-                        <Col xl={6} lg={12} className="bg-light-green py-5 flex-center flex-column">
+                        <Col xl={6} lg={12} className="py-5 flex-center flex-column">
+                            <section className="w-100">
                                 <Form.Group id="profilePic-group" className={group}>
                                     <Form.Label className={label}>Profile Image: </Form.Label>
                                     <Form.Control type="file" name="profilePic" className={control} onChange={handleChangePic} />
                                 </Form.Group>
-                            <Form className="p-2" onSubmit={handleSubmit}>
+                            </section>
+                            <Form className="w-100" onSubmit={handleSubmit}>
                                 {/* <h6 className="text-center" style={{color: 'red'}}>
                                         {state.errors}<br /> 
                                         {state.emailError} <br /> 
@@ -216,6 +218,7 @@ const SignUp = props => {
                                 </Form.Group>
                                 <Button variant="" type="submit" className="butn float-right">sign up</Button>
                             </Form>
+                            {/* <Link type="click" className="" to="/"><i className="fa fa-arrow-left m-1 float-left"></i>Back</Link> */}
                         </Col>
                     </Row>
                 </Container>

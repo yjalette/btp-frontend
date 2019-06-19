@@ -40,6 +40,12 @@ class ProfileEdit extends Component {
     });
   }
 
+  // selectBirthday = date => {
+  //   this.setState({
+  //     birthday: date
+  //   });
+  // }
+
   selectBirthday = date => {
     this.setState({
       birthday: date
@@ -75,16 +81,15 @@ class ProfileEdit extends Component {
             <Col xl={7} lg={12} style={cover} className="height-sm"></Col>
             <Col xl={5} lg={12} className="p-3 bg-beige">
               <Form className="p-2" onSubmit={this.handleSubmit}>
-                <Form.Group className={group} id="form-birthday">
+                {/* <Form.Group className={group} id="form-birthday">
                             <Form.Label className={label}>birthday: </Form.Label> 
                             <DatePicker dateFormat="dd/MM/yyyy" className={control} className="p-1 text-secondary text-left w-100 rounded" value={birthday} selected={birthday} onChange={this.selectBirthday} placeholder="day/month/year" id="birthday"/>     
-                </Form.Group>
-
-                {/* <Form.Group className={group} id="form-birthday">
-                  <Form.Label className={label}>birthday: </Form.Label>
-                  <DatePicker selectDate={this.selectBirthday}/>
-                  <DatePicker selectDay={this.selectDay} selectMonth={this.selectDay} selectYear={this.selectYear}/>
                 </Form.Group> */}
+
+                <Form.Group className={group} id="form-birthday">
+                  <Form.Label className={label}>birthday: </Form.Label>
+                  <DatePick selectDay={this.selectDay} selectMonth={this.selectDay} selectYear={this.selectYear}/>
+                </Form.Group>
 
                 <Form.Group className={group} id="form-occupation">
                   <Form.Label className={label}>occupation: {occupation}</Form.Label>

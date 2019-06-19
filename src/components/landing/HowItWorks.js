@@ -33,7 +33,7 @@ const arr = [{
 }];
 
 const HowItWorks = () => (
-    <Container className="section-wrapper" fluid>
+    <Container className="wrapper" fluid>
         <h2 className="">How It Works</h2>
         <Row className="section m-0 py-5">
             {arr.map(el => (

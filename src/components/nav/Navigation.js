@@ -13,7 +13,7 @@ class Navigation extends Component {
                   <Image src={logo} alt="logo" className="h-100"/>
               </Navbar.Brand>
               <Navbar collapseOnSelect expand="md" className="flex-center">
-                  <Navbar.Toggle aria-controls="responsive-navbar-nav" className="bg-beige"/>
+                  <Navbar.Toggle aria-controls="responsive-navbar-nav" className="bg-light"/>
                   <SignInLinks /> 
               </Navbar> 
           </nav>

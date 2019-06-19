@@ -36,11 +36,11 @@ class HostelSections extends Component {
 
     render() {
         return (
-            <>
-                <section className="d-flex justify-content-between w-100">
-                    <section className="flex-center flex-column p-2 w-100">
-                        <span><img src={profile} className="hostel-logo img-responsive" alt="logo"/></span>
-                        <span className="display-4 my-1">Sunny H-Tel </span>
+            <section className="py-3">
+                <section className="flex-center align-items-between w-100 h-100">
+                    <section className="flex-center flex-column py-2 w-100">
+                        <span><img src={profile} className="hostel-logo img-responsive rounded-circle" alt="logo"/></span>
+                        <span className="display-4 my-1">Sunny H-Tel</span>
                         <span className="font-sm my-1"><span className="fa fa-map-marker text-green font-med px-2"></span>Barcelona, Spain </span>
                         <div className="p-1 text-warning font-med">
                             <i className="fa fa-star"></i>
@@ -53,32 +53,27 @@ class HostelSections extends Component {
                 </section>
                 <section className="d-flex flex-column py-3">
                     <section className={field}>
-                        <span className={label}>type: </span>
-                        <span className="handwritting">city</span>
+                        <span className={label}>type: <span className="handwritting">city</span></span>
                     </section>
                     <section className={field}>
-                        <span className={label}>address: </span>
-                        <span className="handwritting">Calle Gran Vía, 31, Barcelona, Spain</span>
+                        <span className={label}>address: <span className="handwritting">Calle Gran Vía, 31, Barcelona, Spain</span></span>
                     </section>
                     <section className={field}>
-                        <span className={label}>spoken language: </span>
-                        <span className="handwritting">Spanish, Portuguese, English</span>
+                        <span className={label}>spoken language: <span className="handwritting">Spanish, Portuguese, English</span></span>
                     </section>
                     <section className={field}>
-                        <span className={label}>about: </span>
-                        <Descriptions showMore={this.state.showMoreDescription} text={about} handleClick={this.handleDescriptionClick}/>
+                        <span className={label}>about: <Descriptions showMore={this.state.showMoreDescription} text={about} handleClick={this.handleDescriptionClick}/></span>
                     </section>
                     <section className={field}>
-                        <span className={label}>history: </span>
-                        <Descriptions showMore={this.state.showMoreHistory} text={about} handleClick={this.handleHistoryClick} />
+                        <span className={label}>history: <Descriptions showMore={this.state.showMoreHistory} text={about} handleClick={this.handleHistoryClick} /></span>
                     </section>
                 </section>
-                <section className="d-flex justify-content-around w-100 ">
+                <section className="flex-center justify-content-between w-50 py-3 m-auto">
                     <Link className="butn text-center mx-1 flex-fill" to="/hostel-edit">Edit</Link>
                     <Link className="butn text-center mx-1 flex-fill" to="/profile-edit">Delete</Link>
                 </section>
 
-            </>
+            </section>
         )
     }
 }

@@ -14,6 +14,9 @@ import HostelEdit from './components/hostel/HostelEdit';
 import Footer from './components/Footer';
 import JobList from './components/jobs/JobList';
 import JobDetails from './components/jobs/JobDetails';
+import Payment from './components/payment/Payment';
+import Messenger from './components/messenger/Messenger';
+import NewHostel from './components/hostel/NewHostel';
 
 const client = new ApolloClient({
   uri: 'http://localhost:3000/api'
@@ -27,12 +30,15 @@ function App() {
           <Switch>
             <Route exact path="/" component={MainLanding} />
             <Route path="/registration" component={SignUp} />
+            <Route path="/create-hostel" component={NewHostel} />
             <Route path="/profile-view" component={ProfileView} />
             <Route path="/profile-edit" component={ProfileEdit} />
             <Route path="/hostel-view" component={HostelView} />
             <Route path="/hostel-edit" component={HostelEdit} />
             <Route path="/job-list" component={JobList} />
             <Route path="/job-details" component={JobDetails} />
+            <Route path="/payment" component={Payment} />
+            <Route path="/messenger" component={Messenger} />
           </Switch>
         </Router>
         <Footer />

@@ -9,7 +9,7 @@ const group = 'd-flex flex-column align-items-start';
 class ContactUs extends Component {
     render(){
         return (
-            <Container className="section-wrapper" fluid>
+            <Container className="wrapper" fluid>
                 <h2 className="">Still Have a Question? Contact Us!</h2>
                 <Row className="section text-align-right m-0 h-100">
                     <Col sm={12} lg={6}  className="p-0">
