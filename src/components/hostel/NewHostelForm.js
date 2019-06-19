@@ -10,11 +10,11 @@ const NewHostelForm = () => {
 
     const handleChange = e => {
         const { name, value } = e.target;
-        setInputs({ [name]: value });
+        setInputs({...inputs, [name]: value });
     }
 
     const handleChangeSelect = val => {
-        setCountry({ country: val })
+        setCountry(val);
     }
 
     const handleSubmit = e => {
@@ -38,7 +38,7 @@ const NewHostelForm = () => {
             </Form.Group>
             <Form.Group id="country-group" className={group}>
                 <Form.Label className={label}>Country: </Form.Label>
-                <CountryDropdown defaultOptionLabel="Ireland" type="text" className="p-2 muted w-100 rounded" name="country" onChange={handleChangeSelect} />
+                <CountryDropdown  value={country} type="text" className="p-2 muted w-100 rounded" name="country" onChange={handleChangeSelect} />
             </Form.Group>
             <Form.Group id="occupation-group" className={group}>
                 <Form.Label className={label}>Type: </Form.Label>

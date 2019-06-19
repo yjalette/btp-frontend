@@ -339,6 +339,20 @@ select {
   flex-direction: row;
 }
 
+.rbt-input-wrapper {
+  display: flex;
+}
+
+.rbt-token {
+  margin-right: 1em;
+}
+
+.rbt-close {
+  color: red;
+  font-size: 1.2em;
+  padding: 1em;
+}
+
 /* profile */
 
 .cover-image {
