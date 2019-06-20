@@ -32,7 +32,7 @@ class ProfileEdit extends Component {
       language: '',
       spokenLanguages: [],
       about: '',
-      bday: '',
+      bdayError: '',
       multiple: true
     }
 
@@ -66,7 +66,8 @@ class ProfileEdit extends Component {
   validate = () => {
     let bdayError = "";
     if (!isValidDate(this.state.birthday)){
-      bdayError = "enter correct date"
+      bdayError = "enter correct date";
+      return false
     }
 
     return true;
@@ -74,14 +75,15 @@ class ProfileEdit extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.validate());
+    if (!this.validate()) return;
+    
     console.log(this.state)
   }
 
   render() {
     let { country, birthday, spokenLanguages, occupation, about, multiple, bdayError } = this.state;
     return (
-      <Container className="section-wrapper" fluid>
+      <Container className="section-wrapper" fluid> 
         <Navigation />
         <h2>Edit Profile</h2>
         <Container className="reset flex-center align-items-start bg-light-green my-5" fluid>

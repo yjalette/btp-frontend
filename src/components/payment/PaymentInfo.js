@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Form, Row, Col } from 'react-bootstrap';
-import 'react-credit-cards/es/styles-compiled.css';
+import MaskedFormControl from 'react-bootstrap-maskedinput'
 
-import Cards from 'react-credit-cards';
+
 
 const PaymentInfo = (props) => {
     
@@ -11,13 +11,6 @@ const PaymentInfo = (props) => {
             <div className="flex-center">
                 <h4>Payment Details</h4>
             </div>
-            <Cards
-      number={input.number.value}
-      name={input.name.value}
-      expiry={input.expiry.value}
-      cvc={input.cvc.value}
-      focused={state.focused}
-    />
             <Form className="w-100 p-3" onSubmit={props.handleSubmit}>
                 <Form.Group>
                     <Form.Label>CARD NUMBER</Form.Label>
@@ -27,7 +20,7 @@ const PaymentInfo = (props) => {
                     <div className="col-xs-7 col-md-7">
                         <Form.Group>
                             <Form.Label>EXPIRATION DATE</Form.Label>
-                            <Form.Control type="number" className="" placeholder="MM / YY" name="expDate" onChange={props.handleChange} />
+                            <MaskedFormControl type="text" className="" mask='11/11' name="expDate" onChange={props.handleChange} />
                         </Form.Group>
                     </div>
                     <div className="col-xs-5 col-md-5 float-xs-right">
